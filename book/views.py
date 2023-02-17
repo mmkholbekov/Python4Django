@@ -1,12 +1,13 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import models
 
 
-def hi_view(request):
-    return HttpResponse('<h1>Hi Django</h1>')
-
-
 def book_view(request):
-    book = models.New.objects.all()
+    book = models.Book.objects.all()
     return render(request, 'book.html', {'book': book})
+
+
+# Вывод полной информации по id
+def book_detail_view(request, id):
+    book_id = get_object_or_404(models.Book, id=id)
+    return render(request, 'book_detail.html', {'book_id': book_id})

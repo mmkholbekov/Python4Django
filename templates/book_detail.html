@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Detail</title>
+</head>
+<body>
+<center>
+  <h1>Название книги<br>{{book_id.title}}</h1>
+  <p>Описание книги:<br>{{book_id.description}}</p>
+  <img src="{{book_id.image.url}}" alt="" width="400" height="400">
+  <p>Количество страниц:<br>{{book_id.quantity}}</p>
+  <p>Жанр:<br>{{book_id.genre}}</p>
+  <p>Видео:<br>
+      <iframe src="{{book_id.video}}" frameborder="0"></iframe>
+  </p>
+    <p>Цена:<br>{{book_id.price}} сом</p>
+</center>
+
+</body>
+</html>
