@@ -1,21 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book Detail</title>
-</head>
-<body>
+{% include 'header.html' %}
 <center>
-  <h1>Название книги<br>{{book_id.title}}</h1>
-  <p>Описание книги:<br>{{book_id.description}}</p>
-  <img src="{{book_id.image.url}}" alt="" width="400" height="400">
-  <p>Количество страниц:<br>{{book_id.quantity}}</p>
-  <p>Жанр:<br>{{book_id.genre}}</p>
-  <p>Видео:<br>
-      <iframe src="{{book_id.video}}" frameborder="0"></iframe>
-  </p>
-    <p>Цена:<br>{{book_id.price}} сом</p>
+<br><br>
+<hr><hr>
+<div class="card mb-3" style="max-width: 840px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{book_id.image.url}}" class="img-fluid rounded-start" alt="..." width="300" height="400">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"> {{book_id.title}}</h5>
+        <p class="card-text">{{book_id.description}}</p>
+        <p class="card-subtitle mb-2 text-muted"> Жанр: {{book_id.genre}}</p>
+        <h6 class="card-subtitle mb-2 text-muted"> Количество серий: {{book_id.quantity}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted"> Цена: {{book_id.price}} сом</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<hr><hr>
+<iframe src="{{book_id.video}}" frameborder="0" width="700" height="400"></iframe>
+<br><br>
+<hr><hr>
 </center>
 
-</body>
-</html>
+
+
+
+{% include 'footer.html' %}
+
+
+
+
