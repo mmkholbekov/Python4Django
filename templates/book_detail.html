@@ -14,18 +14,20 @@
         <p class="card-subtitle mb-2 text-muted"> Жанр: {{book_id.genre}}</p>
         <h6 class="card-subtitle mb-2 text-muted"> Количество серий: {{book_id.quantity}}</h6>
         <h6 class="card-subtitle mb-2 text-muted"> Цена: {{book_id.price}} сом</h6>
+        <a href="/book_link/{{book_id.id}}/update" class="btn btn-primary">Изменить данные</a>
+        <a href="/book_link/{{book_id.id}}/delete" class="btn btn-primary">Удалить книгу</a>
+
       </div>
     </div>
   </div>
 </div>
+
 <br><br>
 <hr><hr>
 <iframe src="{{book_id.video}}" frameborder="0" width="700" height="400"></iframe>
 <br><br>
 <hr><hr>
 </center>
-
-
 
 
 {% include 'footer.html' %}
