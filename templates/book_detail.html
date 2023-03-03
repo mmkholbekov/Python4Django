@@ -5,33 +5,36 @@
 <div class="card mb-3" style="max-width: 840px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{book_id.image.url}}" class="img-fluid rounded-start" alt="..." width="300" height="400">
+      <img src="{{object.image.url}}" class="img-fluid rounded-start" alt="..." width="300" height="400">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"> {{book_id.title}}</h5>
-        <p class="card-text">{{book_id.description}}</p>
-        <p class="card-subtitle mb-2 text-muted"> Жанр: {{book_id.genre}}</p>
-        <h6 class="card-subtitle mb-2 text-muted"> Количество серий: {{book_id.quantity}}</h6>
-        <h6 class="card-subtitle mb-2 text-muted"> Цена: {{book_id.price}} сом</h6>
-        <a href="/book_link/{{book_id.id}}/update" class="btn btn-primary">Изменить данные</a>
-        <a href="/book_link/{{book_id.id}}/delete" class="btn btn-primary">Удалить книгу</a>
-
+        <h5 class="card-title"> {{object.title}}</h5>
+        <p class="card-text">{{object.description}}</p>
+        <p class="card-subtitle mb-2 text-muted"> Жанр: {{object.genre}}</p>
+        <h6 class="card-subtitle mb-2 text-muted"> Количество серий: {{object.quantity}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted"> Цена: {{object.price}} сом</h6>
+        <a href="/book_link/{{object.id}}/update" class="btn btn-primary">Изменить данные</a>
+        <a href="/book_link/{{object.id}}/delete" class="btn btn-primary">Удалить книгу</a>
       </div>
     </div>
   </div>
 </div>
-
 <br><br>
 <hr><hr>
-<iframe src="{{book_id.video}}" frameborder="0" width="700" height="400"></iframe>
-<br><br>
-<hr><hr>
+<iframe src="{{object.video}}" frameborder="0" width="700" height="400"></iframe>
+    <div class="p-3 mb-2 bg-info text-white" style="width: 27rem;">
+    <table border="2">
+        <tr>
+            <th>Рейтинг</th> <th>Оценка</th> <td>&nbsp;&nbsp;Коментарий:</td>
+        </tr>
+      {% for j in object.comment_object.all %}
+      <tr>
+        <td><h5>{{j.created_date}}</h5></td> <td><h5>&nbsp;&nbsp;&nbsp;{{j.rate}}&nbsp;&nbsp;</h5></td>
+      </tr>
+      {% endfor %}
+    </table>
+</div>
 </center>
 
-
 {% include 'footer.html' %}
-
-
-
-

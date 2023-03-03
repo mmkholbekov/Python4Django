@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Update</title>
-</head>
-<body>
+{% include 'header.html' %}
 <center>
-  <h1>Изменить данные о книге</h1>
+  <h1>Изменить данные</h1>
   <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   {{form.as_p}}
       <input type="submit" value="изменить данные в базе">
   </form>
 </center>
-</body>
-</html>
+{% include 'footer.html' %}

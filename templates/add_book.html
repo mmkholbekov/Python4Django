@@ -7,15 +7,11 @@
 <body>
 <center>
   <h1>Добавить новую книгу</h1>
-
   <form action="/add-book/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
       {{form.as_p}}
-<!--      <input type="submit" value="Дабавить фильм в базу данных">-->
       <button type="submit">Добавить книгу в базу данных</button>
-
   </form>
 </center>
-
 </body>
 </html>
