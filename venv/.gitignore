@@ -1,6 +1,6 @@
+.gitignore
 .idea
 venv
+db.sqlite3
 .vscode
 __pycache__/
-*.py[cod]
-*.so
